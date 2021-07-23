@@ -1,0 +1,63 @@
+{
+  "name": "vsc-utils",
+	"displayName": "VSC Utils",
+	"description": "A set of utilities for Visual Studio Code.",
+	"version": "0.1.0",
+	"publisher": "alexislours",
+	"license": "CC0-1.0",
+	"engines": {
+		"vscode": "^1.58.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/alexislours/vsc-utils.git"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+        "onCommand:vsc-utils.clearEmptyLines",
+		"onCommand:vsc-utils.trimLeadingSpaces",
+		"onCommand:vsc-utils.alignLeft"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vsc-utils.clearEmptyLines",
+				"title": "Clear Empty Lines"
+			},
+			{
+				"command": "vsc-utils.trimLeadingSpaces",
+				"title": "Trim Leading Spaces"
+			},
+			{
+				"command": "vsc-utils.alignLeft",
+				"title": "Align Left"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"package": "vsce package"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.58.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"eslint": "^7.27.0",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2",
+		"vsce": "^1.96.0"
+	}
+}
