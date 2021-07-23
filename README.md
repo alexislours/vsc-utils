@@ -8,11 +8,3 @@ VSC Utils is a set of utilities for Visual Studio Code.
 - Trim leading spaces from selection.
 - Align code left while keeping indentation.
 
-## Release Notes
-
-Initial release.
-
-### 0.1.0
-
-- Initial release of vsc-utils
-
