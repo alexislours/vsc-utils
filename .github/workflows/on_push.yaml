@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 'lts/*'
       - run: npm install
-      - run: npm run lint
+      - run: npm run lint:check
 
   security:
     runs-on: ubuntu-latest
