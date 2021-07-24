@@ -1,16 +1,16 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
-export function activate(context: vscode.ExtensionContext) {
-    let clearEmptyLines = vscode.commands.registerCommand('vsc-utils.clearEmptyLines', () => {
+export function activate(context: vscode.ExtensionContext): void {
+    const clearEmptyLines = vscode.commands.registerCommand("vsc-utils.clearEmptyLines", () => {
         const editor = vscode?.window?.activeTextEditor;
         if (editor !== undefined) {
-            let cursorStart = editor.selection.start;
-            let cursorEnd = editor.selection.end;
-            let range = new vscode.Range(cursorStart, cursorEnd);
-            let rangeText = editor.document.getText(range);
+            const cursorStart = editor.selection.start;
+            const cursorEnd = editor.selection.end;
+            const range = new vscode.Range(cursorStart, cursorEnd);
+            const rangeText = editor.document.getText(range);
             if (rangeText) {
-                let clearedSelection = rangeText.replace(/^\s*\n/gm, "");
-                editor.edit(editBuilder => {
+                const clearedSelection = rangeText.replace(/^\s*\n/gm, "");
+                editor.edit((editBuilder) => {
                     editBuilder.replace(range, clearedSelection);
                 });
             } else {
